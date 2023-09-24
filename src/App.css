@@ -1,7 +1,15 @@
+/* Общие стили для всего приложения */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
 
+/* Логотип анимация */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,6 +21,17 @@
   }
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Заголовок приложения */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,34 +43,31 @@
   color: white;
 }
 
+/* Ссылка в подвале */
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
+/* Стили для контейнера с фильмами */
 .movie-container {
-  background-color: #394d39;
-  /* padding: 16px;
 
-  margin-top: auto; */
+  background-color: #394d39;
+  padding: 16px;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+  margin: 0;
 }
 
+/* Стили для карточки фильма */
 .movie-card {
-
-  background-color: rgb(240, 223, 179);
+  background-color: #f0dfb3;
   border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  padding: 16px;
+
+
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
 }
 
 .movie-card img {
@@ -80,4 +96,60 @@
 
 .movie-card a:hover {
   color: #0056b3;
+}
+
+/* Стили для модального контента */
+.modal-content {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+width: 70%;
+  max-height: 90%;
+  overflow: auto;
+  z-index: 1000;
+}
+.modal-poster {
+width: unset;
+}
+.modal_description {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стили для фона модального контента */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Стили для кнопки закрытия модального окна */
+.modal-close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Дополнительные стили для модального контента (по вашему усмотрению) */
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  margin-bottom: 16px;
 }
